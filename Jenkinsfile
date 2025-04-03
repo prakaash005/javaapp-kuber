@@ -1,6 +1,6 @@
 pipeline {
     environment {
-        imagename = "{your dockerhub id}/javaapp-jenkins-training"
+        imagename = "prakaash005/javaapp-jenkins-training"
         dockerImage = ''
         registryCredentials = 'dockerhub'
     }
@@ -13,7 +13,7 @@ pipeline {
     stages {
         stage("pullscm") {
             steps {
-                git credentialsId: 'github', url: 'git@github.com:{your github repo id}/javaapp-kuber.git'
+                git credentialsId: 'github', url: 'git@github.com:prakaash005/javaapp-kuber.git'
             }
         }
         stage("build") {
